@@ -11,6 +11,9 @@ public:
     void saveState();
     void loadState();
 
+protected:
+    void insertFromMimeData(const QMimeData *source) override;
+
 private slots:
     void onTextChanged();
 

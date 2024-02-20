@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMimeData>
 
 JottyEditor::JottyEditor(QWidget *parent)
         : QTextEdit(parent), stateFile("state.json"), storeNext(false) {
@@ -41,5 +42,11 @@ void JottyEditor::loadState() {
         QTextCursor cursor = textCursor();
         cursor.setPosition(state["cursor_position"].toInt());
         setTextCursor(cursor);
+    }
+}
+
+void JottyEditor::insertFromMimeData(const QMimeData *source) {
+    if (source->hasText()) {
+        insertPlainText(source->text()); // Insert text without formatting
     }
 }
