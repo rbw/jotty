@@ -12,13 +12,13 @@ set(CMAKE_PREFIX_PATH "/usr")
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
 add_executable(jotty
-        main.cpp
-        JottyWindow.cpp
-        JottyEditor.cpp
-        ConfigManager.cpp
-        JottyWindow.h
-        JottyEditor.h
-        ConfigManager.h
+        src/main.cpp
+        src/JottyWindow.cpp
+        src/JottyEditor.cpp
+        src/ConfigManager.cpp
+        src/JottyWindow.h
+        src/JottyEditor.h
+        src/ConfigManager.h
 )
 
 target_link_libraries(jotty Qt6::Widgets)

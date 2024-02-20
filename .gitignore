@@ -1,3 +1,9 @@
+# Build directory
+build
+
+# QT
+.qt
+
 # Prerequisites
 *.d
 
